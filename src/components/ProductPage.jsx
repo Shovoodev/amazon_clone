@@ -1,20 +1,28 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useState ,useEffect } from 'react';
 import { callAPI } from '../utils/CallApi';
 import { EU_CURRENCY } from '../utils/Constants';
 import { ProductDetails } from './'
+import { addToCart} from '../redux/cartSlice';
+import { useDispatch } from "react-redux";
+
+
 const ProductPage = () => {
     const {id } = useParams();
-
     const [product , setProduct] = useState(null);
-
+    const [quantity, setQuantity] = useState("1");
+    const dispatch = useDispatch()
     const getProduct = () => {
       callAPI(`data/products.json`)
       .then((productResults) =>{
         setProduct(productResults[id]);
       })
     }
-    
+    const addQuantityToProduct = () => {
+      setProduct((product.quantity = quantity));
+      return product;
+    };
+  
     useEffect(()=>{
         getProduct();
     }, [] );
@@ -59,6 +67,7 @@ const ProductPage = () => {
               <div className="text-base xl:text-lg mt-1">
                 Quantity:
                 <select
+                  onChange={(e) => setQuantity(e.target.value)}
                   className="p-2 bg-white border rounded-md focus:border-indigo-600"
                 >
                   <option>1</option>
@@ -66,11 +75,14 @@ const ProductPage = () => {
                   <option>3</option>
                 </select>
               </div>
+              <Link to={"/checkout"}>
               <button
+                  onClick={() => dispatch(addToCart(addQuantityToProduct()))}
                   className="btn"
                 >
                   Add to Cart
                 </button>
+                </Link>
               </div>
               </div>
 
