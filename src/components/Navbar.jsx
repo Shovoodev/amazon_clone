@@ -22,8 +22,11 @@ const Navbar = () => {
             </div>
             <div className='flex items-center m-4'> 
             <div className='pr-4 pl-4'>
+            <Link to={"/Signin"}>
+            
                     <div className='text-xs xl:text-sm'> Hellow , sign in </div>
                     <div className='text-sm xl:text-base font-bold'> Accounts & Lists</div>
+            </Link>
                 </div>
                 <div className='pr-4 pl-4'>
                     <div className='text-xs xl:text-sm'>Returns</div>

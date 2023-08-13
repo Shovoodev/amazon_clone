@@ -7,11 +7,11 @@ function HomePage() {
       <div className='min-w-[100px] max-w-[1500px] m-auto'>
         <Carousel/>
         <div className='grid grid-cols-3 xl:grid-cols-4 -mt-80'>
-          <HomePageCard title={"the title "}
-          img={"../images/home_grid_8.jpg"}
+          <HomePageCard title={"Analog Discovery Pro ADP3250"}
+          img={"https://m.media-amazon.com/images/I/31FjFiD3IGL._SY445_SX342_QL70_ML2_.jpg"}
           link={"link"}/>
-          <HomePageCard title={"the title "}
-          img={"../images/home_grid_2.jpg"}
+          <HomePageCard title={"RIGOL DG821 Funzione/Generatore"}
+          img={"https://m.media-amazon.com/images/I/71Cnwc3CPkS.__AC_SY300_SX300_QL70_ML2_.jpg"}
           link={"link"}/>
           <HomePageCard title={"the title "}
           img={"../images/home_grid_7.jpg"}

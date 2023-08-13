@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter , Route , Routes } from 'react-router-dom'
-import { HomePage , Navbar , Checkout , SearchResult , ProductPage } from './components/index'
+import { HomePage , Navbar , Checkout , SearchResult , ProductPage, UserLogPage } from './components/index'
 const App = () => {
   return (
     <BrowserRouter>
@@ -10,6 +10,7 @@ const App = () => {
         <Route  path='/Search' element={<SearchResult/>}/>
         <Route  path='/Product/:id' element={<ProductPage/>}/>
         <Route  path='/Checkout' element={<Checkout/>}/>
+        <Route path='/Signin' element= {<UserLogPage/>}/>
       </Routes>
     </BrowserRouter>
   )
